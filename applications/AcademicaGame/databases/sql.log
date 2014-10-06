@@ -1,0 +1,271 @@
+timestamp: 2014-10-01T03:57:26.219235
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2014-10-01T03:57:26.382900
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2014-10-01T03:57:26.508893
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2014-10-01T03:57:26.860468
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2014-10-01T03:57:26.986107
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2014-10-01T03:57:27.152587
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2014-10-01T03:57:27.336625
+CREATE TABLE Carrera(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Titulo CHAR(512),
+    Clave CHAR(512)
+);
+success!
+timestamp: 2014-10-01T03:57:27.500974
+CREATE TABLE Academia(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    IdCarrera INTEGER REFERENCES Carrera (id) ON DELETE CASCADE,
+    Titulo CHAR(512)
+);
+success!
+timestamp: 2014-10-01T03:57:27.697357
+CREATE TABLE Docente(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nombre CHAR(512),
+    Dificultad INTEGER
+);
+success!
+timestamp: 2014-10-01T03:57:27.865499
+CREATE TABLE TipoMateria(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Tipo CHAR(512)
+);
+success!
+timestamp: 2014-10-01T03:57:28.030423
+CREATE TABLE Materia(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    IdAcademia INTEGER REFERENCES Academia (id) ON DELETE CASCADE,
+    Nombre CHAR(512),
+    Media INTEGER,
+    Varianza INTEGER,
+    Creditos INTEGER,
+    Ciclo INTEGER,
+    IDTipoMateria INTEGER REFERENCES TipoMateria (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2014-10-01T03:57:28.187897
+CREATE TABLE Materia_Docente(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    IdMateria INTEGER REFERENCES Materia (id) ON DELETE CASCADE,
+    IdDocente INTEGER REFERENCES Docente (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2014-10-01T03:57:28.320662
+CREATE TABLE Partida(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    IdUsuario INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2014-10-01T03:57:28.454573
+CREATE TABLE Calificacion(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    IdPartida INTEGER REFERENCES Partida (id) ON DELETE CASCADE,
+    IdMateriaDocente INTEGER REFERENCES Materia_Docente (id) ON DELETE CASCADE,
+    Calificacion INTEGER,
+    Semestre INTEGER,
+    Oportunidad INTEGER
+);
+success!
+timestamp: 2014-10-01T03:57:28.583876
+CREATE TABLE NivelPericia(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    IdPartida INTEGER REFERENCES Partida (id) ON DELETE CASCADE,
+    IdAcademia INTEGER REFERENCES Academia (id) ON DELETE CASCADE,
+    Pericia INTEGER
+);
+success!
+timestamp: 2014-10-01T04:14:41.514408
+ALTER TABLE Materia ADD clave CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

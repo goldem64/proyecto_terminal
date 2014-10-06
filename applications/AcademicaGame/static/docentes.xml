@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cuerpodocente>
+<docente>
+	<nombre>Bueno</nombre>
+	<dificultad>0</dificultad>
+</docente>
+<docente>
+	<nombre>Malo</nombre>
+	<dificultad>9</dificultad>
+</docente>
+<docente>
+	<nombre>Regular</nombre>
+	<dificultad>4</dificultad>
+</docente>
+</cuerpodocente>
