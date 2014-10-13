@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reticula clave="IT2014" carrera="Ingenieria Telematica">
+<academia nombre="matematicas">
+	<materia nombre="Álgebra y Geometría Analítica" clave="II0101">
+	    <creditos>8</creditos>
+	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+	    <ciclo>1</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>	
+        </materia>
+    	<materia nombre="Cálculo diferencial e integral" clave="IT0102">
+	    <creditos>8</creditos>
+	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+	    <ciclo>1</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>	
+        </materia>
+    <materia nombre="Matematicas Discretas" clave="IT0104">
+    	    <creditos>8</creditos>
+   	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+	    <ciclo>1</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>	
+    </materia>
+    <materia nombre="Probabilidad y estadística" clave="II0319">
+    	    <creditos>6</creditos>
+   	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+	    <ciclo>1</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Ecuaciones Diferenciales" clave="II0319">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Métodos numéricos por computadora" clave="II0423">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+</academia>
+<academia nombre="ciencias-basicas">
+    <materia nombre="Electricidad y magnetismo" clave="II0215">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>1</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Teoría electromagnética" clave="IT0213">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+</academia>
+<academia nombre="Programación e ingeniería de software">
+    <materia nombre="Algoritmos y estructura de datos" clave="IT0101">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Introducción a las base de datos" clave="IT0160">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>1</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Diseño de interfaces humano-máquina" clave="IT0317">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Paradigmas de programación" clave="IT0106">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>1</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Base de datos cliente/servidor" clave="IT0207">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Programación orientada a objetos" clave="IT0210">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Base de datos distribuidas" clave="IT0262">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Programación lógica funciona" clave="IT0320">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Marcos de trabajo orientados a objetos" clave="IT0214">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Sistemas distribuidos de información" clave="IT3435">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Redes</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Introducción a la inteligencia artificial" clave="IT0425">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>4</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Ingeniería de software orientada a objetos" clave="IT0319">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Introducción a los sistemas de información" clave="IT0264">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Reconocimiento de voz" clave="IT3473">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Reconocimiento de voz" clave="IT3473">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Arquitectura de objetos distribuidos" clave="IT0424">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>4</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Sistemas expertos" clave="IT3476">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Administración de proyectos de desarrollo de
+software" clave="IT0423">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>4</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+</academia>
+<academia nombre="hardware-software">
+    <materia nombre="Sistemas operativos POSIX" clave="IT0161">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>1</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Organización y estructura de computadoras" clave="IT0105">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>1</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Traductores, compiladores e intérpretes" clave="IT0215">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Arquitectura de computadoras" clave="IT0316">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Diseño de sistemas operativos" clave="IT0318">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Arquitecturas de procesamiento en paralelo" clave="IT3468">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Electrónica analógica" clave="IT0263">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Sistemas operativos distribuidos y de tiempo
+rea" clave="IT0426">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>4</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Microprocesadores y microcontroladores" clave="IT3470">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Electrónica digita" clave="IT0208">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Electrónica digita" clave="IT0208">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Tópicos selectos de sistemas operativos" clave="IT3477">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Sistemas multicomputadores: CLUSTERS" clave="IT3475">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Paradigmas de programación paralela" clave="IT3471">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Programación de sistemas embebidos" clave="IT3478">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Programación de sistemas embebidos" clave="IT3478">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+</academia>
+<academia nombre="Ingenieria-industrial">
+    <materia nombre="Normas internacionales de calidad" clave="NI0421">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Planeación y control de la producción" clave="II3425">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Principios de automatización y robótica" clave="IT3472">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Máquinas de control numérico" clave="II3480">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Laboratorio de manufactura integrado por
+computadora" clave="II3426">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+</academia>
+<academia nombre="Administracion-negocios-y-finanzas">
+    <materia nombre="Taller de exportación" clave="NI3471">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Planeación y evaluación de proyectos
+industriales" clave="II3478">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Economía de las telecomunicaciones" clave="IT3469">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Taller de emprendedores" clave="II0422">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+</academia>
+<academia nombre="Redes-y-telecomunicaciones">
+    <materia nombre="Fundamentos de comunicaciones" clave="IT0209">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Introducción a las redes" clave="IT0103">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>1</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Introducción a las telecomunicaciones" clave="IT3428">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Telecomunicaciones</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Redes locales" clave="IT0211">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Teoría de la información" clave="IT0322">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Tecnologías de conmutación de paquetes" clave="IT0212">
+    	    <creditos>8</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Telefonía y conmutación" clave="IT3430">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Telecomunicaciones</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Redes inalámbricas" clave="IT0321">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Redes satelitales y de microondas" clave="IT3431">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Telecomunicaciones</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Redes y protocolos de servicio" clave="IT3433">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Redes</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Tópicos selectos de telecomunicaciones" clave="IT3432">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Telecomunicaciones</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Seguridad y administración de redes" clave="IT3434">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Redes</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Procesadores digitales de señales" clave="IT3429">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Telecomunicaciones</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Redes multimedia" clave="IT3436">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Redes</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Tópicos selectos de redes" clave="IT3437">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Redes</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Redes inteligentes" clave="IT3474">
+    	    <creditos>6</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3-4</ciclo>
+	    <tipo>Libre</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+</academia>
+<academia nombre="practicas-telematica">
+    <materia nombre="Practicas1" clave="PIT0201">
+    	    <creditos>10</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>2</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Practicas2" clave="PIT0302">
+    	    <creditos>10</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>3</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Practicas Redes" clave="PIT0404">
+    	    <creditos>10</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>4</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+    <materia nombre="Practicas Telecomunicaciones" clave="PIT0403">
+    	    <creditos>10</creditos>
+    	    <participante>Bueno</participante>
+	    <participante>Regular</participante>
+	    <participante>Malo</participante>
+            <ciclo>4</ciclo>
+	    <tipo>Basica</tipo>
+	    <media>8</media>
+	    <varianza>1</varianza>
+    </materia>
+</academia>
+</reticula>
