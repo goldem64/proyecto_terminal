@@ -1,0 +1,36 @@
+{{extend 'layout.html'}}
+<script language="javascript">
+function ajax_setCal(t,direct){
+        var selection=jQuery(t).parent()
+        var id=jQuery(selection).attr('data-id');
+        var time=jQuery('.tiempo');
+    jQuery.ajax({method:'get',url:'{{=URL('SetCalificacion')}}',
+                 data:{'id':id,'tiempo':direct,'time':time},
+                success: function (data){
+                jQuery(selection).next().children().children().html(''+data);
+    }});
+}
+    jQuery(function(){
+        jQuery('.plus10').click(function(){ajax_setCal(this,'plus10');});
+        jQuery('.plus8').click(function(){ajax_setCal(this,'plus8');});
+        jQuery('.plus6').click(function(){ajax_setCal(this,'plus6');});
+        jQuery('.plus4').click(function(){ajax_setCal(this,'plus4');});
+                                     });
+</script>
+<h1>Su carga:</h1>
+<h4 class="tiempo">54</h4>
+<div class="row-fluid">
+    <div class="span12"></div>
+<div class="well span12">
+{{for materia in carga:}}
+    <div class="span12">
+    <div class="span7">
+    <h3 data-id="materia.id">{{=materia.IdMateriaDocente.IdMateria.Nombre}}</h3></div>
+    <div class="span3" data-id="{{=materia.id}}"><button class="btn btn-success plus10">+10</button><button class="btn btn-info plus8">
+    +8</button><button class="btn btn-warning plus6">+6</button><button class="btn btn-danger plus4">+4</button></div>
+    <div class="span1"><h4><strong>{{=materia.Calificacion}}</strong></h4></div>
+   </div>
+{{pass}}
+     </div>
+</div>
+</div>

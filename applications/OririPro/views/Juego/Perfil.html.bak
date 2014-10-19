@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+<h1>Datos de Partida</h1>
+<h3>Pericia</h3>
+<div class="well">
+    {{for p in pericia}}
+    <strong><em>Pericia en:</em>{{=p.IdAcademia.Titulo}}<h5>{{=p.Pericia}}}</h5></strong>
+</div>

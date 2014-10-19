@@ -1,0 +1,19 @@
+{{extend 'layout.html'}}
+<h1>Datos de Partida</h1>
+<h3>Pericia</h3>
+<div class="well">
+    {{for p in pericia:}}
+    <strong><em>Pericia en : </em>{{=p.IdAcademia.Titulo.capitalize()}}<h5>{{=p.Pericia}}</h5></strong>
+    {{pass}}
+</div>
+<h3>Semestre</h3>
+<div>
+    {{if not semestre:}}
+    <h5><em>
+        No se ha iniciado algun semestre
+    </em></h5>
+    {{else:}}
+    <h5><em>{{=semestre.Numero}}</em></h5>
+    {{pass}}
+</div>
+<a href="{{=URL('oferta')}}">Seleecionar Carga</a>

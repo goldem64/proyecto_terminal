@@ -1,0 +1,26 @@
+{{extend 'layout.html'}}
+<script language="javascript">
+function ajax_set(t,direct){
+        var selection=jQuery(t).parent()
+        var id=jQuery(selection).attr('data-id');
+    jQuery.ajax({method:'get',url:'{{=URL('addMateria')}}',
+                 data:{'id':id,'direct':direct},
+                success: function (data){
+        jQuery(selection).css("color","white");
+        jQuery(selection).fadeOut(4000);
+    }});
+}
+    jQuery(function(){
+        jQuery('.add').click(function(){ajax_set(this); jQuery(this).parent().css("background-color","Green");});
+                                     });
+</script>
+
+
+<div style="position:fixed;top:100px;right:50px;"><a class="btn btn-primary"><buttom>Iniciar Parciales</buttom></a></div>
+{{for oferta in ofertada:}}
+    {{for materia in oferta:}}
+    <div class="well" data-id="{{=materia.id}}"><div class"span4">{{=materia.IdMateria.Nombre}}</div><button class="span3 offset2 add"><i class="icon-thumbs-up"></i></button></div>
+    {{pass}}
+{{pass}}
+
+<>

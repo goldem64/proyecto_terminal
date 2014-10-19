@@ -1,0 +1,65 @@
+# coding: utf8
+# intente algo como
+@auth.requires_login()
+def index():
+    car=request.vars['c']
+    carrera=db(db.Carrera.Titulo==car).select().first()
+    db.Partida.insert(IdUsuario=auth.user.id,IdCarrera=carrera.id)
+    Partida=db(db.Partida.IdUsuario==auth.user.id).select().last()
+    session.partida=Partida.id
+    Academias=db(db.Academia.IdCarrera==carrera.id).select()
+    for academia in Academias:
+        db.NivelPericia.insert(IdPartida=Partida.id,IdAcademia=academia.id)
+    redirect(URL('perfil'))
+    return locals()
+
+@auth.requires_login()
+def perfil():
+    semestre=db(db.Semestre.IdPartida==session.partida).select().last()
+
+    pericia=db(db.NivelPericia.IdPartida==session.partida).select()
+    return locals()
+
+@auth.requires_login()
+def oferta():
+    if session.n:
+        db.Semestre.insert(IdPartida=session.partida,Numero=1)
+    else:
+        semestre=db(db.Semestre.IdPartida==session.partida).select().last()
+        db.Semestre.insert(IdPartida=session.partida,Numero=semestre.Numero+1)
+    semestre=db(db.Semestre.IdPartida==session.partida).select().last()
+    ofertada=[]
+    session.semestre=semestre.Numero
+    materias=db(db.Materia).select(orderby=db.Materia.Ciclo)
+    for materia in materias:
+        ofertada.append(curso(materia.id))
+    return locals()
+
+import random
+def curso(materia):
+    ofertada=db(db.Materia_Docente.IdMateria==materia).select(limitby=(0, 1), orderby='<random>')
+    return ofertada
+
+def addMateria():
+    IdMD=request.get_vars
+    semestre=db(db.Semestre.IdPartida==session.partida).select().last()
+    db.Calificacion.insert(IdMateriaDocente=IdMD,Calificacion=10,IdSemestre=semestre.id,Oportunidad=GetOportunidad(IdMD))
+    return locals()
+
+def GetOportunidad(IdMD):
+    foo=[]
+    semestres=db(db.Semestre.IdPartida==session.partida).select()
+    Materia=db(db.Materia_Docente.id==IdMD).select()
+    for semestre in semestres:
+        foo.append=db((db.Calificacion.IdSemestre==semestre.id)&(db.Calificacion.IdMateriaDocente.IdMateria==Materia.id))
+    size=len(foo)
+    if not foo:
+     return 1
+    else:
+     return size
+
+@auth.requires_login()
+def ronda():
+    semestre=db((db.Semestre.IdPartida==session.partida)&(db.Semestre.Numero==session.semestre)).select().last
+    materias=db(db.Calificacion.IdSemestre==semestre.id).select()
+    return locals()
