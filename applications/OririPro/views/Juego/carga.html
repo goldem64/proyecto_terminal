@@ -50,8 +50,13 @@ setTimeout(function () {
     <h2 onload="setTimeout()">{{=m}}</h2>
 {{else:}}
 <h4 id="tiempo" class="tiempo">{{=session.time}}</h4>
+
+ 
+
 <div class="row-fluid">
-    <div class="span12"></div>
+	<div class="col-md-9">
+	 <div class="span12"></div>
+  
 <div class="well span12" style="margin-left: 0px;">
     <div class="span12"><div class="span7"></div></div>
 {{for materia in carga:}}
@@ -69,6 +74,26 @@ setTimeout(function () {
 {{pass}}
      </div>
 </div>
+<div class="col-md-3">
+	
+                        <strong><i class="fa fa-users"></i> Familia</strong>
+                        <input id="familia" value="20" type="range" name="familia" min="0" max="100" disabled onchange="showValueF(this.value)">
+                       
+                        <strong><i class="fa fa-angellist"></i> Social</strong>
+                        <input id="social" value="20" type="range" name="social" min="0" max="100" disabled onchange="showValueS(this.value)">
+                       
+                        <strong><i class="fa fa-child"></i> Trabajo</strong>
+                        <input id="trabajo" value="20" type="range" name="trabajo" min="0" max="100" disabled onchange="showValueT(this.value)">
+                      
+                        <strong><i class="fa fa-book"></i> Estudio</strong>
+                        <input id="estudio" value="20" type="range" name="estudio" min="0" max="100" disabled onchange="showValueE(this.value)">
+                        
+                        
+	
+	</div>
+	</div>
+	
+   
 </div>
 {{pass}}
 <div class="well">
