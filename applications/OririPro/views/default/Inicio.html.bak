@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<span class"span-12"><h4>Para iniciar una partida de clic sobre su carrera</h4></span>
+<br>
+{{for carrera in carreras:}}
+<div class="well"><a class='btn btn-primary' href="{{=URL('Juego','index',vars=dict(c=carrera.Titulo))}}">{{=carrera.Titulo}}</a>
+</div>{{pass}}
+<!--<div class="well">
+    {{#for partida in partidas:}}
+    <a class='btn btn-info' href="{{=URL('Juego','loadGame',vars=dict(c=partida.id))}}">{{=partida.IdCarrera}}</a>
+    {{#pass}}
+</div>-->

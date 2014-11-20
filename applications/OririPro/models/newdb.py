@@ -31,7 +31,15 @@ db.define_table('Materia_Docente',
 
 db.define_table('Partida',
                 Field('IdUsuario','reference auth_user'),
-                Field('IdCarrera','reference Carrera')
+                Field('IdCarrera','reference Carrera'),
+                Field('BajasTemporales','integer'),
+                Field('Creditos','integer'),
+                Field('Dinero','integer'),
+                Field('Estado','integer'),
+                Field('SoftSkills','integer'),
+                Field('VidaFamiliar','integer'),
+                Field('VidaSocial','integer'),
+                Field('VidaLaboral','integer')
                 )
 db.define_table('Semestre',
                 Field('IdPartida','reference Partida'),
@@ -43,10 +51,18 @@ db.define_table('Calificacion',
                 Field('IdMateriaDocente','reference Materia_Docente'),
                 Field('Calificacion','integer',readable=False,writable=False),
                 Field('IdSemestre','reference Semestre'),
-                Field('Oportunidad','integer',readable=False,writable=False)
+                Field('Oportunidad','integer',readable=False,writable=False),
+                Field('Aprobada','integer')
                 )
 
 db.define_table('NivelPericia',
                 Field('IdPartida','reference Partida'),
                 Field('IdAcademia','reference Academia'),
                 Field('Pericia','integer',default=0))
+
+db.define_table('Parcial',
+                Field('IdCalificacion','reference Calificacion'),
+                Field('p1','integer'),
+                Field('p2','integer'),
+                Field('p3','integer'),
+                Field('promedio','integer'))

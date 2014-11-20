@@ -1,26 +1,131 @@
 {{extend 'layout.html'}}
+{{from random import randrange}}
+{{if session.estado==3:}}
+{{max=3}}
+{{else:}}
+{{max=9}}
+{{pass}}
 <script language="javascript">
-function ajax_set(t,direct){
+var max_time = 8;
+var control=0;
+var cont;
+var cinterval;
+var maxclic={{=max}};
+    function ajax_set(t,direct){
+        maxclic=maxclic-1;
+        if (maxclic==0){ jQuery('.container').hide();window.location.href = "{{=URL('carga',scheme='http')}}";}
         var selection=jQuery(t).parent()
         var id=jQuery(selection).attr('data-id');
+        selection.children('.del').attr("disabled", "disabled");
     jQuery.ajax({method:'get',url:'{{=URL('addMateria')}}',
                  data:{'id':id,'direct':direct},
                 success: function (data){
         jQuery(selection).css("color","white");
-        jQuery(selection).fadeOut(4000);
     }});
 }
     jQuery(function(){
-        jQuery('.add').click(function(){ajax_set(this); jQuery(this).parent().css("background-color","Green");});
+        jQuery('.add').click(function(){ajax_set(this); jQuery(this).css("background-color","rgb(49,205,62)");});
                                      });
+    function countdown_timer(){
+  // decrease timer
+  max_time--;
+  document.getElementById('countdown').innerHTML = max_time;
+  if(max_time == 0){
+    clearInterval(cinterval);
+      $('.tab-content').hide();
+      $('#countdown').hide();
+      window.location.href = "{{=URL('carga')}}";
+  }
+};
+    function countup_timer(){
+        control++;
+        m="."+control;
+        document.getElementById('upclass').innerHTML = max_time;
+        if (jQuery(m).children('.add').css('background-color')=='rgb(33, 160, 219)'){
+        jQuery(m).children('.add').attr("disabled", "disabled");
+        jQuery(m).children('.add').css("background-color", "rgb(254,0,2)");
+        jQuery(m).children('.add').removeClass('add');}
+    };
+
+ // cinterval = setInterval('countdown_timer()', 1000);
+  cont=setInterval('countup_timer()',1000);
 </script>
+<div style="position:fixed;top:35px;right:100px;z-index: 100;"> <a href="{{=URL('carga')}}"><h3 id="countdown" style="text-align: center;color: darkred;">Continuar</h3></a></div>
+<div id="upclass" style="display: none;"></div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#ciclo1" role="tab" data-toggle="tab">Primer Ciclo</a></li>
+                <li><a href="#ciclo2" role="tab" data-toggle="tab">Segundo Ciclo</a></li>
+                <li><a href="#ciclo3" role="tab" data-toggle="tab">Tercer Ciclo</a></li>
+                <li><a href="#ciclo4" role="tab" data-toggle="tab">Cuarto Ciclo</a></li>
+            </ul>
 
-
-<div style="position:fixed;top:100px;left:50px;"><a class="btn btn-primary"><buttom>Iniciar Parciales</buttom></a></div>
-{{for oferta in ofertada:}}
-    {{for materia in oferta:}}
-    <div class="well" data-id="{{=materia.id}}"><div class"span4">{{=materia.IdMateria.Nombre}}</div><button class="span3 offset2 add"><i class="icon-thumbs-up"></i></button></div>
-    {{pass}}
-{{pass}}
-
-<>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="ciclo1">
+                 {{for oferta in ofertada:}}
+                    {{for materia in oferta:}}
+                    {{if materia.IdMateria.Ciclo==1:}}
+                    <div class="semestres {{=randrange(4)+3+materia.IdDocente.Dificultad}}" data-id="{{=materia.id}}">
+                        <button class="add del" style="background-color:#21A0DB; height: 90px; width: 135px;position:relative;white-space:normal;">
+                        <div style="height: 90px; width: 135px;">
+                            <h5 style="position:absolute; color:#000" class="text-center"><strong>{{=materia.IdMateria.Nombre}}</strong><br><small>{{=materia.IdMateria.IDTipoMateria.Tipo}}</small></h5>
+                            </div>
+                            </button>
+                        <center><h5>{{=materia.IdDocente.Nombre}}</h5></center>
+                    </div>
+                    {{pass}}
+                {{pass}}
+                {{pass}}
+                </div>
+                <div class="tab-pane" id="ciclo2">
+                  {{for oferta in ofertada:}}
+                    {{for materia in oferta:}}
+                    {{if materia.IdMateria.Ciclo==2:}}
+                    <div class="semestres {{=randrange(9)+materia.IdDocente.Dificultad}}" data-id="{{=materia.id}}">
+                        <button class="add del" style="background-color:#21A0DB; height: 90px; width: 135px;position:relative;white-space:normal;">
+                        <div style="height: 90px; width: 135px;">
+                            <h5 style="position:absolute; color:#000" class="text-center"><strong>{{=materia.IdMateria.Nombre}}</strong><br><small>{{=materia.IdMateria.IDTipoMateria.Tipo}}</small></h5>
+                            </div>
+                            </button>
+                        <center><h5>{{=materia.IdDocente.Nombre}}</h5></center>
+                    </div>
+                {{pass}}
+                {{pass}}
+                {{pass}}
+                </div>
+                <div class="tab-pane" id="ciclo3">
+                   {{for oferta in ofertada:}}
+                    {{for materia in oferta:}}
+                    {{if materia.IdMateria.Ciclo==3 or materia.IdMateria.Ciclo=="3-4":}}
+                    <div class="semestres {{=randrange(9)+2+materia.IdDocente.Dificultad}}" data-id="{{=materia.id}}">
+                        <button class="add del" style="background-color:#21A0DB; height: 90px; width: 135px;position:relative;white-space:normal;">
+                        <div style="height: 90px; width: 135px;">
+                            <h5 style="position:absolute; color:#000" class="text-center"><strong>{{=materia.IdMateria.Nombre}}</strong><br><small>{{=materia.IdMateria.IDTipoMateria.Tipo}}</small></h5>
+                            </div>
+                            </button>
+                        <center><h5>{{=materia.IdDocente.Nombre}}</h5></center>
+                    </div>
+                {{pass}}
+                {{pass}}
+                {{pass}}
+                </div>
+                <div class="tab-pane" id="ciclo4">
+                    {{for oferta in ofertada:}}
+                    {{for materia in oferta:}}
+                    {{if materia.IdMateria.Ciclo==4 or materia.IdMateria.Ciclo=="3-4":}}
+                    <div class="semestres {{=randrange(9)+3+materia.IdDocente.Dificultad}}" data-id="{{=materia.id}}">
+                        <button class="add del" style="background-color:#21A0DB; height: 90px; width: 135px;position:relative;white-space:normal;">
+                        <div style="height: 90px; width: 135px;">
+                            <h5 style="position:absolute; color:#000" class="text-center"><strong>{{=materia.IdMateria.Nombre}}</strong><br><small>{{=materia.IdMateria.IDTipoMateria.Tipo}}</small></h5>
+                            </div>
+                            </button>
+                        <center><h5>{{=materia.IdDocente.Nombre}}</h5></center>
+                    </div>
+                {{pass}}
+                {{pass}}
+                {{pass}}
+                </div>
+            </div>
+            <h3>Materias sugeridas <strong>6</strong></h3>
+            <div class="img-right"><h4>5:40 <span class="glyphicon glyphicon-time"></span></h4></div>

@@ -11,16 +11,14 @@
 
 
 def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
+    x=0
+    return locals()
 
-    if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
-    """
-    response.flash = T("Welcome to web2py!")
-    return dict(message=T('Hello World'))
-
+@auth.requires_login()
+def inicio():
+    carreras=db(db.Carrera).select()
+    partidas=db(db.Partida.IdUsuario==auth.user.id).select()
+    return locals()
 
 def user():
     """

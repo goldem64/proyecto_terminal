@@ -1,0 +1,41 @@
+SOLUCIONADO
+La aplicación no es tomada como la default por lo tanto es difícil navegar en ella
+Al tratar de entrar en una dirección si la variable de session sea perdido marca error
+Errores en variables de session no iniciadas en función GameOver
+No se pasan las variables de Tiempo (pasa por ajax)
+Es muy fácil pasar, por lo que se modificaron los valores y pesos, se usa redondeo
+El tiempo no disminuye luego de calcular una materia
+Reglas de finalización se pasaban de sus valores
+Las partidas guardadas no pasa su variable de identificación
+
+
+
+POR SOLUCIONAR
+Dependencia de las barras de tiempo, funciona en un 50% pues si se mueve la de Social aumenta o disminuye la de Escolar
+pero no la de trabajo(SOLUCIONADO)
+La navegación al determinar las calificaciones, colocar reglas de finalizado el semestre cuando el tiempo es igual a 0,se solicita una baja temporal(cuyo caso no se guarda la calificación final) o se han evaluado todas las materias.(SOLUCIONADO)
+No se tiene un estado de partida se agregan 3, finalizado con Egresado, En Curso, Baja definitiva.(SOLUCIONADO)
+Maquetado y efectos.(PARCIALMENTE: FALTA EL 10%)
+Partidas en la vista no muestran a qué carrera pertenecen
+Las materias ofertadas no desaparecen ni son filtradas por ciclo(Maquetado y efectos)(SOLUCIONANDO QUEDARA SOLUCIONADO)
+
+
+Pruebas unitarias
+Reglas de finalización Correcto
+Generación de calificación Correcto
+Generación de Pericia Correcto
+Inicialización de una partida Correcto
+Generar Oferta educativa Incompleto(falta filtrado y cierre de materias)
+Seleccionar Carga Correcto
+Actualización de estado del juego(pericia, semestre, calificación) Correcto
+Ponderación de tiempos incompleto(falta modificar dependencia de barras) Correcto
+Interfaz y animación incompleto(muy básico y no tan estético)
+Cambios de estados (regular irregular condicionado gameover)Correcto
+Operaciones de dinero (falta integracion del gasto por tiempo dedicado a social)Correcto
+Al cargarse las materias en el primer primer no se muestra 1(Se soluciono)Correcto
+Pase de variables de tiempo.Correcto
+
+
+Se trabaja en paralelo una nueva forma de calcular la calificación haciendo uso de RNAs.Problemas enfrentados referente a este tema, la cantidad de muestras necesarias para entrenar la red, debe ser sacada de encuestas. En algunos casos las muestras superan al 100% de los alumnos inscritos.
+
+

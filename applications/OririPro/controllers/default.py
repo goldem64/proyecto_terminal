@@ -11,9 +11,14 @@
 
 
 def index():
-    carreras=db(db.Carrera).select()
+    x=0
     return locals()
 
+@auth.requires_login()
+def Inicio():
+    carreras=db(db.Carrera).select()
+    partidas=db(db.Partida.IdUsuario==auth.user.id).select()
+    return locals()
 
 def user():
     """

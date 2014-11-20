@@ -1,6 +1,7 @@
 {{extend 'layout.html'}}
-<span class"span-12"><h4>Para iniciar una partida de clic sobre su carrera</h4></span>
-<br>
-{{for carrera in carreras:}}
-<div class="well"><a class='btn btn-primary' href="{{=URL('Juego','index',vars=dict(c=carrera.Titulo))}}">{{=carrera.Titulo}}</a>
-</div>{{pass}}
+
+          <div class="pantalla1">
+              <img src='{{=URL('static/img','logo.jpg')}}' class="img-center img-responsive" title="Logo" style="width: 250px;" />
+              <a href="{{=URL('Inicio')}}" class="btn-jugar">JUGAR</a>   
+             <a href="#" class="btn-creditos">CREDITOS</a>
+          </div>

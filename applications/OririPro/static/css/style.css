@@ -1,0 +1,91 @@
+/* 
+    Created on : 27/10/2014, 01:02:16 AM
+    Author     : Mauricio
+*/
+body {
+  background-image: url('../img/001.jpg');
+}
+p {
+  font-size: 18px;
+}
+.img-center {
+  text-align: center;
+  margin: 0 auto;
+}
+.img-right {
+  float: right;
+}
+.img-left {
+  float: left;
+}
+.pantalla1 {
+  background-color: #ffffff;
+  border-color: 2px solid #ffffff;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.pantalla1 .btn-jugar {
+  width: 100%;
+  background-color: #3598db;
+  border-bottom: 5px #297fb8 solid;
+  border-radius: 2px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 40px;
+  display: inline-block;
+  margin: 10px 0;
+  transition: all 0.2s ease-in-out;
+}
+.pantalla1 .btn-jugar:hover {
+  background-color: #2e83be;
+  color: #ffffff;
+  text-decoration: none;
+}
+.pantalla1 .btn-creditos {
+  width: 100%;
+  background-color: #e4801e;
+  border-bottom: 5px #d25400 solid;
+  border-radius: 2px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 40px;
+  display: inline-block;
+  margin: 10px 0;
+  transition: all 0.2s ease-in-out;
+}
+.pantalla1 .btn-creditos:hover {
+  background-color: #d46e11;
+  color: #ffffff;
+  text-decoration: none;
+}
+.container {
+  margin-top: 20px;
+}
+.container .row {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px;
+}
+.info {
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  left: 287px;
+  color: #928f8f;
+}
+.semestres {
+  margin: 20px 20px;
+  display: inline-block;
+  position: relative;
+}
+/*# sourceMappingURL=style.css.map */
