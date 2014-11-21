@@ -4,7 +4,12 @@
                     <img src="{{=URL('static/img','avatar.png')}}" style="width: 300px; margin: 0 auto;"  /> 
                     <i class="fa fa-info-circle fa-2x info" data-toggle="modal" data-target="#myModal"></i>
                     <br />
-                    <p>Estado:{{=partida.Estado}}</p>
+                    <p>Estado:
+                    {{ estados = { 1: 'Regular',2:'Irregular', 3 : 'Condicionado', 4 : 'Inactivo'} }}
+                    {{=estados[partida.Estado]}}
+                    
+                    
+                    </p>
                         <p>Dinero:{{=partida.Dinero}}</p>
                     <p>Avance del Juego</p>
                      <p>Creditos:
@@ -25,18 +30,72 @@
                     </div>
                     <div>
                      <form>
-                        <strong><i class="fa fa-users"></i> Familia</strong>
+						 
+						 <!-- Familia-->
+						 
+						 <strong><i class="fa fa-users"></i> Familia</strong><br />
+						 <div class="col-md-11">
+						 
                         <input id="familia" value="20" type="range" name="familia" min="0" max="100" oninput="this.form.amountInputF.value=this.value" onchange="showValueF(this.value)">
-                        <input type="number"  name="amountInputF" min="0" max="100" value="20" oninput="this.form.familia.value=this.value" style="float:right;width:45px;"/>
-                        <br><strong><i class="fa fa-angellist"></i> Social</strong>
-                        <input id="social" value="20" type="range" name="social" min="0" max="100" oninput="this.form.amountInputS.value=this.value" onchange="showValueS(this.value)">
-                        <input type="number"  name="amountInputS" min="0" max="100" value="20" oninput="this.form.social.value=this.value" style="float:right;width:45px;"/>
-                        <br></b><strong><i class="fa fa-child"></i> Trabajo</strong>
-                        <input id="trabajo" value="20" type="range" name="trabajo" min="0" max="100" oninput="this.form.amountInputT.value=this.value" onchange="showValueT(this.value)">
-                        <input type="number"  name="amountInputT" min="0" max="100" value="20" oninput="this.form.trabajo.value=this.value" style="float:right;width:45px;"/>
-                        <br><strong><i class="fa fa-book"></i> Estudio</strong>
-                        <input id="estudio" value="20" type="range" name="estudio" min="0" max="100" oninput="this.form.amountInputE.value=this.value" onchange="showValueE(this.value)">
-                        <input type="number"  name="amountInputE" min="0" max="100" value="20" oninput="this.form.estudio.value=this.value" style="float:right;width:45px;" />
+						 </div>
+						 
+						 <div class="col-md-1">
+						  <input type="number"  name="amountInputF" min="0" max="100" value="20" oninput="this.form.familia.value=this.value" style="float:right;width:45px;"/>
+						 
+						 </div>
+						 
+						  <!-- Social-->
+						 <strong><i class="fa fa-angellist"></i> Social</strong> <br />
+						 <div class="col-md-11">
+						  <input id="social" value="20" type="range" name="social" min="0" max="100" oninput="this.form.amountInputS.value=this.value" onchange="showValueS(this.value)">
+						 
+						 </div>
+						 
+						 
+						 <div class="col-md-1">
+						 
+						 <input type="number"  name="amountInputS" min="0" max="100" value="20" oninput="this.form.social.value=this.value" style="float:right;width:45px;"/>
+						 </div>
+						 
+						 
+						 
+						  <!-- Trabajo-->
+						 </b><strong><i class="fa fa-child"></i> Trabajo</strong><br />
+						 <div class="col-md-11">
+						 <input id="trabajo" value="20" type="range" name="trabajo" min="0" max="100" oninput="this.form.amountInputT.value=this.value" onchange="showValueT(this.value)">
+						 
+						 </div>
+						 
+						 
+						 <div class="col-md-1">
+						 
+						 <input type="number"  name="amountInputT" min="0" max="100" value="20" oninput="this.form.trabajo.value=this.value" style="float:right;width:45px;"/>
+						 </div>
+						 
+						 
+						  <!-- Estudio-->
+						 <strong><i class="fa fa-book"></i> Estudio</strong><br />
+						 <div class="col-md-11">
+						 <input id="estudio" value="20" type="range" name="estudio" min="0" max="100" oninput="this.form.amountInputE.value=this.value" onchange="showValueE(this.value)">
+						 
+						 </div>
+						 
+						 
+						 <div class="col-md-1">
+						 <input type="number"  name="amountInputE" min="0" max="100" value="20" oninput="this.form.estudio.value=this.value" style="float:right;width:45px;" />
+						 
+						 </div>
+                        
+                       
+                      
+                       
+                        
+                      
+                        
+                        
+                       
+                        
+                        
                         </form>
                        
                           
