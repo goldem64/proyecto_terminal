@@ -49,7 +49,11 @@ setTimeout(function () {
 {{if m:}}
     <h2 onload="setTimeout()">{{=m}}</h2>
 {{else:}}
+<<<<<<< HEAD
+<h4 id="tiempo" class="tiempo">Horas de estudio:{{=session.time}}</h4>
+=======
 <h4 id="tiempo" class="tiempo">{{=session.time}}</h4>
+>>>>>>> bd7d247ef9ff422447411016ea899e8f9671f02f
 
  
 
@@ -77,7 +81,8 @@ setTimeout(function () {
 <div class="col-md-3">
 	
                         <strong><i class="fa fa-users"></i> Familia</strong>
-                        <input id="familia" value="{{=session.familia}}" type="range" name="familia" min="0" max="100" disabled><p>%{{=session.social}}</p>
+<<<<<<< HEAD
+                        <input id="familia" value="{{=session.familia}}" type="range" name="familia" min="0" max="100" disabled><p>%{{=session.familia}}</p>
                        
                         <strong><i class="fa fa-angellist"></i> Social</strong>
                         <input id="social" value="{{=session.social}}" type="range" name="social" min="0" max="100" disabled><p>%{{=session.social}}</p>
@@ -87,6 +92,18 @@ setTimeout(function () {
                       
                         <strong><i class="fa fa-book"></i> Estudio</strong>
     <input id="estudio" value="{{=(session.time*100)/168}}" type="range" name="estudio" min="0" max="100" disabled><p>%{{=(session.time*100)/168}}</p>
+=======
+                        <input id="familia" value="20" type="range" name="familia" min="0" max="100" disabled onchange="showValueF(this.value)">
+                       
+                        <strong><i class="fa fa-angellist"></i> Social</strong>
+                        <input id="social" value="20" type="range" name="social" min="0" max="100" disabled onchange="showValueS(this.value)">
+                       
+                        <strong><i class="fa fa-child"></i> Trabajo</strong>
+                        <input id="trabajo" value="20" type="range" name="trabajo" min="0" max="100" disabled onchange="showValueT(this.value)">
+                      
+                        <strong><i class="fa fa-book"></i> Estudio</strong>
+                        <input id="estudio" value="20" type="range" name="estudio" min="0" max="100" disabled onchange="showValueE(this.value)">
+>>>>>>> bd7d247ef9ff422447411016ea899e8f9671f02f
                         
                         
                         <h4>Nota:</h4>

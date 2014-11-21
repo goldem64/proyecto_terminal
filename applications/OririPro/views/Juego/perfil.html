@@ -115,15 +115,24 @@
         </script>
             <div class="row">
                 <div class="col-md-6">
+<<<<<<< HEAD
                     <!-- ESTA SECCION GENERA UNA GRAFICA DE PASTEL-->
                     <div id="flot-placeholder"
                      style="width:350px; height:300px;"></div>
                     <!-- AGUI TERMINA LA GRAFICA DE PASTEL-->
                     <div style="margin-left: 50px;">
                     <img src='{{=URL('static/img','avatar.png')}}' style="width: 130px; margin: 0 auto;"  /> 
+=======
+                    <img src="{{=URL('static/img','avatar.png')}}" style="width: 300px; margin: 0 auto;"  /> 
+>>>>>>> bd7d247ef9ff422447411016ea899e8f9671f02f
                     <i class="fa fa-info-circle fa-2x info" data-toggle="modal" data-target="#myModal"></i>
                     <br />
-                    <p>Estado:{{=partida.Estado}}</p>
+                    <p>Estado:
+                    {{ estados = { 1: 'Regular',2:'Irregular', 3 : 'Condicionado', 4 : 'Inactivo'} }}
+                    {{=estados[partida.Estado]}}
+                    
+                    
+                    </p>
                         <p>Dinero:{{=partida.Dinero}}</p>
                     <p>Avance del Juego</p>
                      <p>Creditos:
@@ -138,6 +147,7 @@
                 </div>
                 <div class="col-md-6">
                     <p>Energia</p>
+<<<<<<< HEAD
                     <div>
                         <strong><i class="fa fa-users"></i> Familia</strong>
                         <input id="id0" value="25" type="range" name="quantity" min="0" max="100" onchange="changeF(this.value)">
@@ -151,12 +161,97 @@
                         <strong><i class="fa fa-book"></i> Estudio</strong>
                         <input id="id3" value="25" type="range" name="quantity" min="0" max="100" onchange="changeE(this.value)">
                         <p id="estudio">25</p>
+=======
+                    <div class="progress">
+                        <div id="total" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                            80%
+                        </div>
+                    </div>
+                    <div>
+                     <form>
+						 
+						 <!-- Familia-->
+						 
+						 <strong><i class="fa fa-users"></i> Familia</strong><br />
+						 <div class="col-md-11">
+						 
+                        <input id="familia" value="20" type="range" name="familia" min="0" max="100" oninput="this.form.amountInputF.value=this.value" onchange="showValueF(this.value)">
+						 </div>
+						 
+						 <div class="col-md-1">
+						  <input type="number"  name="amountInputF" min="0" max="100" value="20" oninput="this.form.familia.value=this.value" style="float:right;width:45px;"/>
+						 
+						 </div>
+						 
+						  <!-- Social-->
+						 <strong><i class="fa fa-angellist"></i> Social</strong> <br />
+						 <div class="col-md-11">
+						  <input id="social" value="20" type="range" name="social" min="0" max="100" oninput="this.form.amountInputS.value=this.value" onchange="showValueS(this.value)">
+						 
+						 </div>
+						 
+						 
+						 <div class="col-md-1">
+						 
+						 <input type="number"  name="amountInputS" min="0" max="100" value="20" oninput="this.form.social.value=this.value" style="float:right;width:45px;"/>
+						 </div>
+						 
+						 
+						 
+						  <!-- Trabajo-->
+						 </b><strong><i class="fa fa-child"></i> Trabajo</strong><br />
+						 <div class="col-md-11">
+						 <input id="trabajo" value="20" type="range" name="trabajo" min="0" max="100" oninput="this.form.amountInputT.value=this.value" onchange="showValueT(this.value)">
+						 
+						 </div>
+						 
+						 
+						 <div class="col-md-1">
+						 
+						 <input type="number"  name="amountInputT" min="0" max="100" value="20" oninput="this.form.trabajo.value=this.value" style="float:right;width:45px;"/>
+						 </div>
+						 
+						 
+						  <!-- Estudio-->
+						 <strong><i class="fa fa-book"></i> Estudio</strong><br />
+						 <div class="col-md-11">
+						 <input id="estudio" value="20" type="range" name="estudio" min="0" max="100" oninput="this.form.amountInputE.value=this.value" onchange="showValueE(this.value)">
+						 
+						 </div>
+						 
+						 
+						 <div class="col-md-1">
+						 <input type="number"  name="amountInputE" min="0" max="100" value="20" oninput="this.form.estudio.value=this.value" style="float:right;width:45px;" />
+						 
+						 </div>
+                        
+                       
+                      
+                       
+                        
+                      
+                        
+                        
+                       
+                        
+                        
+                        </form>
+                       
+                          
+>>>>>>> bd7d247ef9ff422447411016ea899e8f9671f02f
                     </div>
                 </div>
                 <div class="col-md-6">
+<<<<<<< HEAD
                     <h3>Vida Familiar:</h3>{{=partida.VidaFamiliar}}
                     <h3>Vida Social:</h3>{{=partida.VidaSocial}}
                     <h3>Vida Laboral:</h3>{{=partida.VidaLaboral}}
+=======
+                    <h1>Pericias</h1>
+                    <center>
+                        <img src="{{=URL('static/img','grafica.png')}}" />
+                    </center>
+>>>>>>> bd7d247ef9ff422447411016ea899e8f9671f02f
                 </div>                
                 <div class="col-md-6">
                     <center>
@@ -169,6 +264,53 @@
                     </center>
                 </div>   
             </div>
+            
+            
+             <!-- Modal -->
+        <div class="table-responsive">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Informacion del usuario</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row-fluid">
+	
+	<div class="col-md-12">
+	
+	<div class="col-md-6">
+	<h3>Vida Familiar  <img src="{{=URL('static','img/bueno.png')}}" width="7%" height="7%" /></h3>
+	<input id="familia" value="20" type="range" name="familia" min="0" max="100" disabled>
+	</div>
+	<div class="col-md-6">
+	<h3>Vida Social  <img src="{{=URL('static','img/bueno.png')}}" width="7%" height="7%" /></h3>
+	<input id="social" value="20" type="range" name="social" min="0" max="100" disabled>
+	
+	</div>
+	
+	</div>
+	
+	<div class="col-md-12">
+	<div class="col-md-6">
+	<h3>Vida Laboral <img src="{{=URL('static','img/bueno.png')}}" width="7%" height="7%" /></h3>
+	<input id="laboral" value="20" type="range" name="laboral" min="0" max="100" disabled >
+	</div>
+	<div class="col-md-6">
+	<h3>Vida Escolar  <img src="{{=URL('static','img/bueno.png')}}" width="7%" height="7%" /></h3>
+	<input id="escolar" value="20" type="range" name="escolar" min="0" max="100" disabled>
+	
+	</div>
+	
+	</div>
+	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
 
 <script type="application/javascript">
     var t=[25,25,25,25];
