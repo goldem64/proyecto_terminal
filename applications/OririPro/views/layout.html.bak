@@ -78,7 +78,7 @@
             {{end}}
         </div>
         {{pass}}
-        <div class="container" style="margin-top: 20px; background-color: #fff; padding: 20px; border-radius: 4px;">
+        <div class="container" style="margin-top: 20px; background-color: #fff; border-radius: 4px;">
             {{block center}}
             {{include}}
             {{end}}

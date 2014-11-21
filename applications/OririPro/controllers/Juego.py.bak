@@ -63,8 +63,12 @@ def savetime():#guarda el tiempo que se le dedica al estudio
         else:
             x=int(request.vars['time'])
             y=int(request.vars['trabajo'])
+            ts=int(request.vars['social'])
+            tf=int(request.vars['familia'])
             session.time=int((x/100.00)*168)#porcentaje pasado a horas de estudio
             session.trabajo=y
+            session.familia=tf
+            session.social=ts
             redirect=URL('ofertada')
             session.parcial=1;
         return 1
@@ -165,10 +169,13 @@ def SetCalificacion():#regresa la calificacion dependiente de NivelExigenciaDoc,
     tiempo=var.tiempo
     #calf=calf-1
     dbCal=db(db.Calificacion.id==idcalf).select().first()
+    partida=db(db.Partida.id==session.partida).select().first()
     Creditos=dbCal.IdMateriaDocente.IdMateria.Creditos #Creditos
     Promedio=dbCal.IdMateriaDocente.IdMateria.Media #Promedio de materia
     DifMD=dbCal.IdMateriaDocente.IdDocente.Dificultad#Dificultad Docente
     V=dbCal.IdMateriaDocente.IdMateria.Varianza
+    IDMateria=dbCal.IdMateriaDocente.IdMateria
+    print IDMateria
     if tiempo=="plus10":#T= tiempo dedicado a esa materia
         T=10
         time=time-10
@@ -182,8 +189,12 @@ def SetCalificacion():#regresa la calificacion dependiente de NivelExigenciaDoc,
         T=4
         time=time-4
     rand=random.uniform(-1*(V),V)
-    calf=5*(T/float(Creditos))+0.01*MediaPericia(dbCal.IdMateriaDocente.IdMateria)+0.2*(10-DifMD)+0.2*Promedio+rand#metodo de regresion lineal multiple
-    pericia=CalcularPericia(DifMD,Promedio,dbCal.IdMateriaDocente.IdMateria,calf,SS)#calcular pericia TODO SS Softskills
+    calf=4*(T/float(Creditos))+0.01*MediaPericia(IDMateria)+0.3*(10-DifMD)+0.2*Promedio+rand#metodo de regresion lineal multiple
+    VS=CalcularVidaSocial(partida.VidaSocial,session.social)
+    VF=CalcularVidaFamiliar(partida.VidaFamiliar,session.familia)
+    VL=VidaLaboral(partida.VidaLaboral,session.trabajo)
+    SS=CalcularSoftSkills(VS,VF,VL)
+    pericia=CalcularPericia(DifMD,Promedio,IDMateria,calf,SS)#calcular pericia TODO SS Softskills
     calf=int(round(calf))
     if calf >10:
         calf=10
@@ -231,7 +242,7 @@ def CalculaDinero():
 
 
 def CalcularPericia(DifMD,Promedio,IdMateria,cal,SS):#en funcion de exigenciaMaestro
-    pericia=(0.2*(1+DifMD)+0.2*(10-Promedio)+0.02*MediaPericia(dbCal.IdMateriaDocente.IdMateria)+0.3*cal+0.1*SS)*10
+    pericia=(0.2*(1+DifMD)+0.2*(10-Promedio)+0.02*MediaPericia(IdMateria)+0.3*cal+0.1*SS)*10
     return pericia
 
 import math
@@ -243,8 +254,12 @@ def CalcularVidaFamiliar(VF,TF):#en funcion de TiempoFamiliar,VidaFamiliar y un 
     VFamiliar=(random.uniform(-1*(4),4))*10+(VF+TF)/2
     return VFamiliar
 
+def VidaLaboral(VL,TL):#depende de VidaLaboral,TiempoLaboral
+    VLaboral=(random.uniform(-1*(1),1))*10+(VL+TL)/2
+    return VLaboral
+
 def CalcularSoftSkills(VS,VF,VL):#En funcion de Vida social,Vida Familiar,VidaLaboral.
-    #SS=
+    SS=int((VS+VF+VL)/3.00)
     return SS
 
 def MediaPericia(IDMat):##Obtiene la media para cursar cierta materia en cierto ciclo

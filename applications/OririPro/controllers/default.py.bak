@@ -15,7 +15,7 @@ def index():
     return locals()
 
 @auth.requires_login()
-def inicio():
+def Inicio():
     carreras=db(db.Carrera).select()
     partidas=db(db.Partida.IdUsuario==auth.user.id).select()
     return locals()

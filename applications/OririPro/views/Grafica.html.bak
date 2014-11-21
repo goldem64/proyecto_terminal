@@ -1,0 +1,183 @@
+{{extend 'layout.html'}}
+ <script type="text/javascript">
+
+            var options = {};
+            var dataset = [];
+            /* En dato guardaremos las cantidades de cada gajo */
+            var dato = [];
+            dato[0] = 1;
+            dato[1] = 1;
+            dato[2] = 1;
+            dato[3] = 1;
+            /* En label guardaremos los nombres de cada gajo */
+            var label = [];
+            label[0] = "Familia";
+            label[1] = "Social";
+            label[2] = "Estudio";
+            label[3] = "Trabajo";
+            /* En color guardaremos los colores de cada gajo */
+            var color = [];
+            color[0] = "#005CDE";
+            color[1] = "#00A36A";
+            color[2] = "#7D0096";
+            color[3] = "#DE000F";
+            /* Declaramos la función que creara los objetos 
+             necesarios para llamar a la función $.plot de Flot */
+            function setVariables() {
+                /* dataset es el objeto que necesita 
+                 como segundo parámetro la funcion $.plot */
+                /* en el incluiremos los datos de la gráfica */
+                for (var k in dato) {
+                    dataset[k] = {
+                        label: label[k],
+                        data: dato[k],
+                        color: color[k]
+                    };
+                }
+                /* options es el objeto que necesita como 
+                 tercer parámetro la función $.plot */
+                /* en el incluiremos las opciones de 
+                 visualización la gráfica */
+                options = {
+                    series: {
+                        pie: {
+                            show: true,
+                            label: {
+                                show: true,
+                                radius: 0.8,
+                                background: {
+                                    opacity: 0.8,
+                                    color: '#fff'
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+            /* llamamos a la función setVariables para tener
+             listas las variables antes de cargar la página */
+            setVariables();
+
+            $(document).ready(function () {
+                /* Con $.plot creamos el gráfico tras cargar la página */
+                $.plot($("#flot-placeholder"), dataset, options);
+                /* tras cargar la página impedimos que se muestren 
+                 los elementos del formulario que no están
+                 declarados en el array dato */
+                for (var i = 4; i < 11; i++) {
+                    $("#id" + (i)).css('display', 'none');
+                }
+                /* Cuando cambia el número de datos volvemos a 
+                 generar el gráfico */
+                $("#num").change(function () {
+                    /* vaciamos los objetos necesarios para $.plot */
+                    dataset.length = 0;
+                    options.length = 0;
+                    /* recogemos el valor actual */
+                    var numelementos = parseInt($(this).val());
+                    /* eliminamos o creamos los datos y elementos 
+                     del formulario según la cantidad
+                     sea menor o mayor que la actual */
+                    if (dato.length > numelementos) {
+                        for (var i = numelementos; i < dato.length; i++) {
+                            delete dato[i];
+                            $("#id" + i).css('display', 'none');
+                        }
+                        dato.length = numelementos;
+                    } else {
+                        for (var i = dato.length; i < numelementos; i++) {
+                            dato[i] = 1;
+                            $("#id" + i).css('display', 'inline');
+                        }
+                    }
+                    /* volvemos a crear las variables para $.plot */
+                    setVariables();
+                    /* Con $.plot creamos el gráfico */
+                    $.plot($("#flot-placeholder"), dataset, options);
+                });
+                /* Cuando cambia el valor de algún dato 
+                 volvemos a generar el gráfico */
+                $("#form .datos select").change(function () {
+                    /* vaciamos los objetos necesarios para $.plot */
+                    dataset.length = 0;
+                    options.length = 0;
+                    /* reconocemos el elemento por su id */
+                    var elemento = $(this).attr("id");
+                    var numelemento = elemento.substring(elemento.length - 1);
+                    /* guardamos su valor actual */
+                    dato[numelemento] = parseInt($(this).val());
+                    /* volvemos a crear las variables para $.plot */
+                    setVariables();
+                    /* Con $.plot creamos el gráfico */
+                    $.plot($("#flot-placeholder"), dataset, options);
+                });
+            });
+        </script>
+<div id="flot-placeholder"
+             style="width:350px; height:300px;"></div>
+        <!-- generamos el formulario para que el usuario
+        pueda cambiar los datos -->
+        <form id="form">
+            <fieldset style="visibility: hidden;">
+                <label for="num">Número de datos</label>
+                <select id="num" name="num" style="visibility: hidden;">
+                    <option>4</option>
+<!--                    <option style="visibility: hidden;">6</option>-->
+                </select>
+            </fieldset>
+            <fieldset class="datos">
+                <legend>Datos</legend>
+                Familia
+                <select name="Familia" id="id0" style="background-color: #005cdf; color: #fff;"> 
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                Social
+                <select id="id1" style="background-color: #00a36a; color: #fff;">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                Estudio
+                <select id="id2" style="background-color: #7c0096; color: #fff;">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                Trabajo
+                <select id="id3" style="background-color: #de000f; color: #fff;">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option> 
+                   <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </fieldset>
+        </form>
